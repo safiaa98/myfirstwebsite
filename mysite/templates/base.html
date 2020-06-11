@@ -21,9 +21,7 @@
         <link rel="stylesheet" href="https://unpkg.com/tachyon@4.10.0/css/Tachyon.min.css"/>
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
-        <div class="container ph3 ph5-ns">
-            {% block content %}{% endblock %}
-        </div>
+      
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}
@@ -32,7 +30,9 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+        <div class="container ph3 ph5-ns">
+            {% block content %}{% endblock %}
+        </div>
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/mysite.js' %}"></script>
